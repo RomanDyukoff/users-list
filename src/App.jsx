@@ -11,6 +11,7 @@ import { Singlepage } from './pages/Singlepage/Singlepage';
 const App = () => {
   
   const [ users, setUsers] = useState([]);
+
   const addUser = ({ id, name, lastname }) => {
     const newUser = {
       id: id,
@@ -25,8 +26,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Userspage users={users} />} />
-          <Route path='/:id' element={<Singlepage users={users} />} />
-          <Route path='create-user' element={<CreateUser addUser={addUser} />} />
+          <Route path="/:id" element={<Singlepage users={users} cb={setUsers} />} />
+          <Route path="create-user" element={<CreateUser addUser={addUser} />} />
         </Route>
       </Routes>
     </>

@@ -3,10 +3,10 @@ import { Userslist } from '../../components/UsersList/UsersList'
 
 
 
-export const Userspage = ({ users }) => {
+export const Userspage = ({ users, reUser }) => {
     return (
         <>
-            <Userslist users={users} />
+            <Userslist users={users} reUser={reUser} />
         </>
     );
 }
